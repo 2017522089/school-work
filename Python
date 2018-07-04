@@ -1,0 +1,62 @@
+#男女比例
+import matplotlib.pyplot as plt
+labels='female','male'
+sizes=38.38,61.62
+colors='lightskyblue','lightcoral'
+explode=0.07,0
+plt.pie(sizes,explode=explode,labels=labels,colors=colors,autopct='%1.1f%%',shadow=True,startangle=50)
+plt.axis('equal')
+plt.show()
+                              
+
+
+
+
+#生存率饼状图
+import matplotlib.pyplot as plt
+labels='survived','victim'
+sizes=73.94,26.05
+colors='yellowgreen','gold'
+explode=0,0.07
+plt.pie(sizes,explode=explode,labels=labels,colors=colors,autopct='%1.1f%%',shadow=True,startangle=50)
+plt.axis('equal')
+plt.show()
+                                                                               
+                                                                               
+                                                                                   
+
+
+
+#年龄分布柱状图
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+
+
+def draw_bar(labels, quants):
+    width = 0.4
+    ind = np.linspace(0.5, 9.5, 9)
+    # make a square figure
+    fig = plt.figure(1)
+    ax = fig.add_subplot(111)
+    # Bar Plot
+    ax.bar(ind - width / 2, quants, width, color='yellow')
+    # Set the ticks on x-axis
+    ax.set_xticks(ind)
+    ax.set_xticklabels(labels)
+    # labels
+    ax.set_xlabel('Age')
+    ax.set_ylabel('Number')
+    # title
+    ax.set_title('age distribution', bbox={'facecolor': '0.8', 'pad': 5})
+    plt.grid(True)
+    plt.show()
+    plt.savefig("bar.jpg")
+    plt.close()
+
+
+labels = ['<0', '9', '10~19', '20~29', '30~39', '40~49', '50~59', '60~69', '70~79']
+
+quants = [177, 62, 102, 220, 167, 89, 48, 19,7]
+
+draw_bar(labels, quants)
