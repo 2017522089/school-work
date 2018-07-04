@@ -51,3 +51,4 @@ cat sex.csv | grep 'male' | wc –l
 cat sex.csv | grep 'female' | wc –l
 echo "scale=4;891/(891+314)" | bc | tee sex.csv
 echo "scale=4;314/(891+314)" | bc | tee -a sex.csv
+
